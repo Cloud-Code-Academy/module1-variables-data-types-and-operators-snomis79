@@ -276,16 +276,10 @@ public with sharing class VariablesDataTypesOperators {
    * @param e The fifth number.
    * @return The result of the adjusted arithmetic expression.
    */
-  public static Double complexOrderOfOperations(
-    Integer a,
-    Integer b,
-    Integer c,
-    Integer d,
-    Integer e
-  ) {
+  public static Double complexOrderOfOperations(Integer a, Integer b,Integer c,Integer d,Integer e) {
     // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-    Double result = a * b - c / (Double) d + e;
-    return null; // Replace null with the variable you used to store the result
+    Double result = (a * b - c) / (Double) d + e;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -299,7 +293,7 @@ public with sharing class VariablesDataTypesOperators {
     final Double SUBTRACT_FACTOR = 32.0;
     final Double MULTIPLY_FACTOR = 5.0;
     final Double DIVIDE_FACTOR = 9.0;
-
+Double result = (fahrenheit - SUBTRACT_FACTOR) * (MULTIPLY_FACTOR / DIVIDE_FACTOR);
     return result; // Replace null with the variable you used to store the result
   }
 
@@ -314,11 +308,10 @@ public with sharing class VariablesDataTypesOperators {
    */
   public static Integer performDivisionAndCast(Double a, Double b) {
     // Perform the division and cast (round down) off the result.
-    Double divisionResult = null;
-
+    Double divisionResult = math.floor(a / b);
     // Write the code for type casting the divisionResult to an Integer
-    Integer roundedResult = null;
-    return null; // Replace null with the variable you used to store the result
+    Integer roundedResult = Integer.ValueOf(divisionResult); 
+    return roundedResult; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -330,12 +323,10 @@ public with sharing class VariablesDataTypesOperators {
    * @param numberOfHours The number of hours worked in a week.
    * @return A Decimal representing the weekly paycheck.
    */
-  public static Decimal calculateWeeklyPaycheck(
-    Decimal hourlyRate,
-    Double numberOfHours
-  ) {
+  public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate,Double numberOfHours) {
+    Double result = hourlyRate * numberOfHours;
     // Calculate the weekly paycheck using the formula: rate multiplied by hours
-    return null; // Replace null with the variable you used to store the result
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -348,11 +339,10 @@ public with sharing class VariablesDataTypesOperators {
    * @param numberOfHours The number of hours worked in a week.
    * @return A Decimal representing the monthly paycheck.
    */
-  public static Decimal calculateMonthlyPaycheck(
-    Decimal hourlyRate,
-    Double numberOfHours
-  ) {
-    return null; // Replace null with the variable you used to store the result
+  public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
+    final Integer WEEKSPERMONTH = 4;
+    Decimal result = (hourlyRate * numberOfHours) * WEEKSPERMONTH;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -365,11 +355,8 @@ public with sharing class VariablesDataTypesOperators {
    * @param salesTaxRate The sales tax rate as a decimal (e.g., 0.05 for 5% tax).
    * @return The total cost after applying the sales tax.
    */
-  public static Decimal calculateTotalCost(
-    Decimal pricePerUnit,
-    Integer numberOfUnits,
-    Decimal salesTaxRate
-  ) {
-    return null; // Replace null with the variable you used to store the result
+  public static Decimal calculateTotalCost(Decimal pricePerUnit, Integer numberOfUnits, Decimal salesTaxRate) {
+    Decimal result = (pricePerUnit * numberOfUnits) * (1 + salesTaxRate);
+    return result; // Replace null with the variable you used to store the result
   }
 }
