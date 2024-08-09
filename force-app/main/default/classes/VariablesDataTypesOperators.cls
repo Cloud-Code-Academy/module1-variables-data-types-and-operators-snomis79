@@ -34,9 +34,11 @@ public with sharing class VariablesDataTypesOperators {
   public static Integer addition(Integer a, Integer b) {
     if (a == null || b == null) {
       return null;
+    } else {
+      Integer result = a + b;
+      return result;
     }
-    Integer q1 = a + b;
-    return q1;
+
     // Replace null with the variable you used to store the result
   }
 
@@ -49,10 +51,8 @@ public with sharing class VariablesDataTypesOperators {
    * @return The difference between the two numbers.
    */
   public static Integer subtraction(Integer a, Integer b) {
-    a = 2;
-    b = 2;
-    Integer q2 = 2 - 2;
-    return q2; // Replace null with the variable you used to store the result
+    Integer result = a - b;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -64,10 +64,8 @@ public with sharing class VariablesDataTypesOperators {
    * @return The product of the two numbers.
    */
   public static Integer multiplication(Integer a, Integer b) {
-    a = 4;
-    b = 4;
-    Integer q3 = 4 * 4;
-    return q3; // Replace null with the variable you used to store the result
+    Integer result = a * b;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -80,7 +78,13 @@ public with sharing class VariablesDataTypesOperators {
    * @return The quotient of the division, or 0 if the denominator is zero.
    */
   public static Decimal division(Integer a, Integer b) {
-    return null; // Replace null with the variable you used to store the result
+    Integer result;
+    if (b == 0) {
+      result = 0;
+    } else {
+      result = a / b;
+    }
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -94,9 +98,14 @@ public with sharing class VariablesDataTypesOperators {
    * @return True if the number is even, False otherwise.
    */
   public static Boolean isEven(Integer num) {
-    return null; // Replace null with the variable you used to store the result
+    Boolean result;
+    if (math.mod(num, 2) == 0) {
+      result = true;
+    } else {
+      result = false;
+    }
+    return result; // Replace null with the variable you used to store the result
   }
-
   /**
    * Question 6
    * Checks if a number is positive.
@@ -105,7 +114,13 @@ public with sharing class VariablesDataTypesOperators {
    * @return true if the number is positive, false otherwise.
    */
   public static Boolean isPositive(Integer num) {
-    return null; // Replace null with the variable you used to store the result
+    Boolean result;
+    if (num >= 0) {
+      result = true;
+    } else {
+      result = false;
+    }
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -117,7 +132,9 @@ public with sharing class VariablesDataTypesOperators {
    * @return The concatenated string.
    */
   public static String concatenateStrings(String str1, String str2) {
-    return null; // Replace null with the variable you used to store the result
+    String result;
+    result = str1 + str2;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -136,7 +153,8 @@ public with sharing class VariablesDataTypesOperators {
     String verb,
     String endingPunctuation
   ) {
-    return null; // Replace null with the variable you used to store the result
+    String result = 'The ' + noun + ' is ' + verb + endingPunctuation;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -149,7 +167,13 @@ public with sharing class VariablesDataTypesOperators {
    * @return True if the date is in the past, False otherwise.
    */
   public static Boolean isDateInPast(Date dt) {
-    return null; // Replace null with the variable you used to store the result
+    Boolean result;
+    if (dt < date.today()) {
+      result = true;
+    } else {
+      result = false;
+    }
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -162,7 +186,13 @@ public with sharing class VariablesDataTypesOperators {
    * @return True if the date is today or in the future, False otherwise.
    */
   public static Boolean isDateTodayOrFuture(Date dt) {
-    return null; // Replace null with the variable you used to store the result
+    Boolean result;
+    if (dt >= date.today()) {
+      result = true;
+    } else {
+      result = false;
+    }
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -175,9 +205,10 @@ public with sharing class VariablesDataTypesOperators {
    * @return The number of milliseconds equivalent to the given number of minutes.
    */
   public static Integer convertMinutesToMilliseconds(Integer minutes) {
-    Integer MILLISECONDS_PER_MINUTE = null; // Make this value a constant
+    final Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant
     Integer milliseconds;
-    return null; // Replace null with the variable you used to store the result
+    Integer result = MILLISECONDS_PER_MINUTE * minutes;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -191,7 +222,9 @@ public with sharing class VariablesDataTypesOperators {
    * @return The average of the three numbers.
    */
   public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
-    return null; // Replace null with the variable you used to store the result
+    Integer totalNumbers = 3;
+    Double result = (a + b + c) / totalNumbers;
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -210,10 +243,10 @@ public with sharing class VariablesDataTypesOperators {
     Integer c
   ) {
     // Add parentheses around the addition operation so that it is performed before multiplication
-    Integer result = a + b * c;
+    Integer result = (a + b) * c;
 
     // Return the result
-    return null; // Replace null with the variable you used to store the result
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -225,8 +258,8 @@ public with sharing class VariablesDataTypesOperators {
     // Add parentheses in the below expression to change the result.
     // The result of the expression as it is right now is 43.
     // You should add parentheses so that the result of the expression becomes 8.
-    Integer answer = 48 - 15 + 5 * 2;
-    return null; // Replace null with the variable you used to store the result
+    Integer answer = 48 - ((15 + 5) * 2);
+    return answer; // Replace null with the variable you used to store the result
   }
 
   /**
@@ -252,7 +285,6 @@ public with sharing class VariablesDataTypesOperators {
   ) {
     // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
     Double result = a * b - c / (Double) d + e;
-
     return null; // Replace null with the variable you used to store the result
   }
 
@@ -268,7 +300,7 @@ public with sharing class VariablesDataTypesOperators {
     final Double MULTIPLY_FACTOR = 5.0;
     final Double DIVIDE_FACTOR = 9.0;
 
-    return null; // Replace null with the variable you used to store the result
+    return result; // Replace null with the variable you used to store the result
   }
 
   /**
